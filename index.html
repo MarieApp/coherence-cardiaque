@@ -3,212 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche Produit | Ai-Me Cohérence Cardiaque</title>
+    <title>Cohérence Cardiaque | Ai-Me</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+    <style>
+        @keyframes breathIn {
+            from { transform: scale(1); background-color: #3B82F6; }
+            to { transform: scale(1.3); background-color: #60A5FA; }
+        }
+        
+        @keyframes breathOut {
+            from { transform: scale(1.3); background-color: #60A5FA; }
+            to { transform: scale(1); background-color: #3B82F6; }
+        }
+        
+        @keyframes hold {
+            from { transform: scale(1.3); background-color: #60A5FA; }
+            to { transform: scale(1.3); background-color: #60A5FA; }
+        }
+        
+        .breath-in { animation: breathIn var(--duration, 5s) forwards; }
+        .breath-out { animation: breathOut var(--duration, 5s) forwards; }
+        .breath-hold { animation: hold var(--duration, 5s) forwards; }
+        
+        .method-card {
+            transition: all 0.3s ease;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-    <div class="max-w-4xl mx-auto p-6 bg-white shadow-sm my-8">
-        <header class="border-b border-gray-200 pb-6 mb-8">
-            <div class="flex justify-between items-center">
-                <h1 class="text-3xl font-medium text-blue-600">Ai-Me Cohérence Cardiaque</h1>
-                <div class="text-right">
-                    <p class="text-sm text-gray-500">Développé par</p>
-                    <p class="font-medium text-blue-600">Ai-Me | Au Pays de MarIe</p>
-                </div>
-            </div>
-        </header>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-blue-500 text-white py-6 shadow-md">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl font-light">Cohérence Cardiaque</h1>
+            <p class="mt-2">Retrouvez calme et sérénité par la respiration</p>
+        </div>
+    </header>
 
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-blue-800">Description de l'application</h2>
-            <p class="mb-4">
-                L'application Ai-Me Cohérence Cardiaque est un outil de gestion du stress basé sur des techniques de respiration contrôlée. 
-                Cette application web minimaliste guide l'utilisateur dans sa pratique de la cohérence cardiaque à travers différentes 
-                méthodes de respiration. L'interface épurée offre des animations visuelles synchronisées avec les cycles respiratoires, 
-                permettant à l'utilisateur de suivre facilement le rythme et la durée de chaque phase.
-            </p>
-            <p>
-                Conçue pour être accessible sur tout appareil (ordinateur, tablette, smartphone), elle ne nécessite aucune installation 
-                et fonctionne directement dans le navigateur. L'application respecte la vie privée des utilisateurs en ne collectant 
-                aucune donnée personnelle.
-            </p>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-blue-800">Méthodes de respiration proposées</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="border border-gray-200 rounded p-4">
-                    <h3 class="font-medium text-blue-600 mb-2">Cohérence Cardiaque Classique</h3>
-                    <p class="text-sm mb-2">La méthode 5-5</p>
-                    <div class="bg-blue-50 p-2 rounded text-center mb-2">
-                        Inspirez 5s → Expirez 5s
-                    </div>
-                    <p class="text-sm">
-                        Méthode recommandée pour un équilibre du système nerveux.
-                    </p>
-                </div>
-                
-                <div class="border border-gray-200 rounded p-4">
-                    <h3 class="font-medium text-blue-600 mb-2">Méthode 4-7-8</h3>
-                    <p class="text-sm mb-2">Pour apaiser l'anxiété</p>
-                    <div class="bg-blue-50 p-2 rounded text-center mb-2">
-                        Inspirez 4s → Retenez 7s → Expirez 8s
-                    </div>
-                    <p class="text-sm">
-                        Favorise la détente et aide à l'endormissement.
-                    </p>
-                </div>
-                
-                <div class="border border-gray-200 rounded p-4">
-                    <h3 class="font-medium text-blue-600 mb-2">Respiration Carrée</h3>
-                    <p class="text-sm mb-2">Équilibre parfait 4-4-4-4</p>
-                    <div class="bg-blue-50 p-2 rounded text-center mb-2">
-                        Inspirez 4s → Retenez 4s → Expirez 4s → Retenez 4s
-                    </div>
-                    <p class="text-sm">
-                        Méthode efficace pour réduire l'anxiété et le stress.
-                    </p>
-                </div>
-                
-                <div class="border border-gray-200 rounded p-4">
-                    <h3 class="font-medium text-blue-600 mb-2">Respiration 4-6</h3>
-                    <p class="text-sm mb-2">Détente profonde</p>
-                    <div class="bg-blue-50 p-2 rounded text-center mb-2">
-                        Inspirez 4s → Expirez 6s
-                    </div>
-                    <p class="text-sm">
-                        Expiration prolongée pour une relaxation accrue.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-blue-800">Bienfaits de la cohérence cardiaque</h2>
-            <p class="mb-4">
-                La cohérence cardiaque est une technique respiratoire qui synchronise le rythme cardiaque avec la respiration.
-                Cette pratique agit sur le système nerveux autonome et permet d'équilibrer les systèmes sympathique et parasympathique.
-            </p>
+    <!-- Main Content -->
+    <main class="flex-1 container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-medium text-center mb-6">Choisissez votre méthode de respiration</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-heart"></i></div>
-                    <div>
-                        <h3 class="font-medium">Réduction du stress et de l'anxiété</h3>
-                        <p class="text-sm text-gray-600">
-                            Diminue la production de cortisol et active le système parasympathique.
-                        </p>
-                    </div>
+            <!-- Breathing Methods Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                <div class="method-card bg-white p-5 rounded-lg shadow-md cursor-pointer" data-method="5-5">
+                    <h3 class="text-blue-500 font-medium text-lg">Cohérence Cardiaque</h3>
+                    <p class="text-sm text-gray-500">La méthode classique 5-5</p>
+                    <div class="my-3 font-semibold">Inspirez 5s → Expirez 5s</div>
+                    <p class="text-sm">Méthode recommandée pour un équilibre du système nerveux.</p>
                 </div>
                 
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-brain"></i></div>
-                    <div>
-                        <h3 class="font-medium">Amélioration de la concentration</h3>
-                        <p class="text-sm text-gray-600">
-                            Augmente la clarté mentale et la capacité d'attention.
-                        </p>
-                    </div>
+                <div class="method-card bg-white p-5 rounded-lg shadow-md cursor-pointer" data-method="4-7-8">
+                    <h3 class="text-blue-500 font-medium text-lg">Méthode 4-7-8</h3>
+                    <p class="text-sm text-gray-500">Pour apaiser l'anxiété</p>
+                    <div class="my-3 font-semibold">Inspirez 4s → Retenez 7s → Expirez 8s</div>
+                    <p class="text-sm">Favorise la détente et aide à l'endormissement.</p>
                 </div>
                 
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-bed"></i></div>
-                    <div>
-                        <h3 class="font-medium">Amélioration du sommeil</h3>
-                        <p class="text-sm text-gray-600">
-                            Facilite l'endormissement et la qualité du repos.
-                        </p>
-                    </div>
+                <div class="method-card bg-white p-5 rounded-lg shadow-md cursor-pointer" data-method="4-4-4-4">
+                    <h3 class="text-blue-500 font-medium text-lg">Respiration Carrée</h3>
+                    <p class="text-sm text-gray-500">Équilibre parfait 4-4-4-4</p>
+                    <div class="my-3 font-semibold">Inspirez 4s → Retenez 4s → Expirez 4s → Retenez 4s</div>
+                    <p class="text-sm">Idéal pour réduire l'anxiété et le stress.</p>
                 </div>
                 
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-heartbeat"></i></div>
-                    <div>
-                        <h3 class="font-medium">Régulation de la pression artérielle</h3>
-                        <p class="text-sm text-gray-600">
-                            Contribue à normaliser la tension et à réduire le risque cardiovasculaire.
-                        </p>
-                    </div>
+                <div class="method-card bg-white p-5 rounded-lg shadow-md cursor-pointer" data-method="4-6">
+                    <h3 class="text-blue-500 font-medium text-lg">Respiration 4-6</h3>
+                    <p class="text-sm text-gray-500">Détente profonde</p>
+                    <div class="my-3 font-semibold">Inspirez 4s → Expirez 6s</div>
+                    <p class="text-sm">Expiration prolongée pour une relaxation accrue.</p>
+                </div>
+            </div>
+            
+            <!-- Breathing Exercise -->
+            <div id="exercise-container" class="hidden max-w-md mx-auto text-center mb-12">
+                <div id="breathing-circle" class="w-48 h-48 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center shadow-lg transition-transform">
+                    <span id="instruction" class="text-white text-xl font-medium">Prêt</span>
                 </div>
                 
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-shield-alt"></i></div>
-                    <div>
-                        <h3 class="font-medium">Renforcement du système immunitaire</h3>
-                        <p class="text-sm text-gray-600">
-                            Améliore les défenses naturelles de l'organisme.
-                        </p>
-                    </div>
-                </div>
+                <div id="timer" class="text-3xl font-light my-4">0:00</div>
                 
-                <div class="flex items-start space-x-3">
-                    <div class="text-blue-500 mt-1"><i class="fas fa-smile"></i></div>
-                    <div>
-                        <h3 class="font-medium">Régulation des émotions</h3>
-                        <p class="text-sm text-gray-600">
-                            Aide à la gestion des émotions difficiles et améliore l'humeur.
-                        </p>
+                <div class="flex justify-center mt-6 space-x-4">
+                    <button id="start-btn" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded shadow transition">Commencer</button>
+                    <button id="stop-btn" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-6 rounded shadow transition">Arrêter</button>
+                </div>
+            </div>
+            
+            <!-- Information Section -->
+            <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+                <h2 class="text-2xl text-blue-500 font-medium border-b-2 border-green-400 pb-2">Qu'est-ce que la cohérence cardiaque?</h2>
+                <p class="my-4">
+                    La cohérence cardiaque est une technique de respiration qui permet de synchroniser le rythme cardiaque avec la respiration. 
+                    Elle consiste généralement à adopter une respiration lente et régulière à raison de 6 respirations par minute 
+                    (inspiration de 5 secondes suivie d'une expiration de 5 secondes).
+                </p>
+                
+                <p class="font-medium mt-4">Pratiquée régulièrement, elle permet de :</p>
+                <ul class="my-4 space-y-2">
+                    <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-green-500 before:text-xl">Réduire le stress et l'anxiété</li>
+                    <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-green-500 before:text-xl">Améliorer la concentration</li>
+                    <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-green-500 before:text-xl">Favoriser un meilleur sommeil</li>
+                    <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-green-500 before:text-xl">Réguler la pression artérielle</li>
+                    <li class="pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-green-500 before:text-xl">Renforcer le système immunitaire</li>
+                </ul>
+                <p>Pour des résultats optimaux, il est recommandé de pratiquer 3 sessions de 5 minutes par jour.</p>
+                
+                <h2 class="text-2xl text-blue-500 font-medium mt-8 mb-4">Conseils pour une pratique efficace</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded shadow">
+                        <h3 class="text-blue-500 font-medium">Régularité</h3>
+                        <p class="text-sm">Pratiquez idéalement 3 fois par jour : au réveil, à midi et avant le coucher.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded shadow">
+                        <h3 class="text-blue-500 font-medium">Position</h3>
+                        <p class="text-sm">Asseyez-vous confortablement, le dos droit mais détendu, les pieds à plat sur le sol.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded shadow">
+                        <h3 class="text-blue-500 font-medium">Respiration</h3>
+                        <p class="text-sm">Respirez de préférence par le nez, en gonflant d'abord le ventre puis la poitrine.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded shadow">
+                        <h3 class="text-blue-500 font-medium">Attention</h3>
+                        <p class="text-sm">Concentrez-vous sur votre respiration et les sensations dans votre corps.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-blue-800">Recommandations d'utilisation</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded">
-                    <h3 class="font-medium mb-2">Fréquence optimale</h3>
-                    <p>
-                        3 sessions de 5 minutes par jour :
-                    </p>
-                    <ul class="list-disc ml-5 mt-2 text-sm">
-                        <li>Au réveil</li>
-                        <li>En milieu de journée</li>
-                        <li>Avant le coucher</li>
-                    </ul>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-blue-500 font-medium">Développé par <strong>Ai-Me | Au Pays de MarIe</strong></div>
+            <div class="text-gray-500 text-sm mt-2">© 2025 - Tous droits réservés</div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const methodCards = document.querySelectorAll('.method-card');
+        const exerciseContainer = document.getElementById('exercise-container');
+        const breathingCircle = document.getElementById('breathing-circle');
+        const instruction = document.getElementById('instruction');
+        const timer = document.getElementById('timer');
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+
+        // Variables
+        let selectedMethod = null;
+        let exerciseInterval = null;
+        let totalSeconds = 0;
+        let isRunning = false;
+        let currentPhase = 'ready';
+        let currentCycle = 0;
+        
+        // Breathing methods configuration
+        const breathingMethods = {
+            '5-5': {
+                name: 'Cohérence Cardiaque 5-5',
+                phases: [
+                    { name: 'in', duration: 5, instruction: 'Inspirez' },
+                    { name: 'out', duration: 5, instruction: 'Expirez' }
+                ],
+                cycleLength: 10
+            },
+            '4-7-8': {
+                name: 'Méthode 4-7-8',
+                phases: [
+                    { name: 'in', duration: 4, instruction: 'Inspirez' },
+                    { name: 'hold', duration: 7, instruction: 'Retenez' },
+                    { name: 'out', duration: 8, instruction: 'Expirez' }
+                ],
+                cycleLength: 19
+            },
+            '4-4-4-4': {
+                name: 'Respiration Carrée',
+                phases: [
+                    { name: 'in', duration: 4, instruction: 'Inspirez' },
+                    { name: 'hold', duration: 4, instruction: 'Retenez' },
+                    { name: 'out', duration: 4, instruction: 'Expirez' },
+                    { name: 'hold', duration: 4, instruction: 'Retenez' }
+                ],
+                cycleLength: 16
+            },
+            '4-6': {
+                name: 'Respiration 4-6',
+                phases: [
+                    { name: 'in', duration: 4, instruction: 'Inspirez' },
+                    { name: 'out', duration: 6, instruction: 'Expirez' }
+                ],
+                cycleLength: 10
+            }
+        };
+
+        // Initialize phase counters for each method
+        let phaseCounters = {};
+        Object.keys(breathingMethods).forEach(method => {
+            phaseCounters[method] = 0;
+        });
+
+        // Event Listeners
+        methodCards.forEach(card => {
+            card.addEventListener('click', () => {
+                selectedMethod = card.dataset.method;
+                methodCards.forEach(c => c.classList.remove('ring-2', 'ring-blue-400'));
+                card.classList.add('ring-2', 'ring-blue-400');
+                exerciseContainer.classList.remove('hidden');
                 
-                <div class="bg-gray-50 p-4 rounded">
-                    <h3 class="font-medium mb-2">Position recommandée</h3>
-                    <p class="text-sm">
-                        Assis, dos droit mais détendu, pieds à plat sur le sol.
-                        Si possible, dans un environnement calme.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-blue-800">Caractéristiques techniques</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <h3 class="font-medium mb-2">Compatibilité</h3>
-                    <ul class="list-disc ml-5 text-sm">
-                        <li>Fonctionne sur tous les navigateurs modernes</li>
-                        <li>Compatible avec ordinateurs, tablettes et smartphones</li>
-                        <li>Aucune installation requise</li>
-                    </ul>
-                </div>
+                // Reset exercise state
+                resetExercise();
                 
-                <div>
-                    <h3 class="font-medium mb-2">Fonctionnalités</h3>
-                    <ul class="list-disc ml-5 text-sm">
-                        <li>Minuteur intégré</li>
-                        <li>Animations visuelles synchronisées</li>
-                        <li>Instructions vocales optionnelles</li>
-                        <li>Mode jour/nuit</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                // Update instruction
+                instruction.textContent = 'Prêt';
+                
+                // Scroll to exercise
+                exerciseContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
 
-        <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-sm text-gray-500">
-            <p class="mb-2">
-                Application <span class="font-medium text-blue-600">Ai-Me Cohérence Cardiaque</span> 
-                développée par <span class="font-medium">Ai-Me | Au Pays de MarIe</span>
-            </p>
-            <p>© 2025 - Tous droits réservés</p>
-        </footer>
-    </div>
+        startBtn.addEventListener('click', startExercise);
+        stopBtn.addEventListener('click', stopExercise);
+
+        // Functions
+        function startExercise() {
+            if (!selectedMethod || isRunning) return;
+            
+            isRunning = true;
+            startBtn.disabled = true;
+            startBtn.classList.add('opacity-50');
+            
+            // Reset timers and counters
+            totalSeconds = 0;
+            currentCycle = 0;
+            phaseCounters[selectedMethod] = 0;
+            
+            // Start the exercise
+            updateTimer();
+            runBreathingPhase();
+            
+            // Set interval to update timer and phases
+            exerciseInterval = setInterval(() => {
+                totalSeconds++;
+                updateTimer();
+                
+                // Check if current phase should end
+                const method = breathingMethods[selectedMethod];
+                const currentPhaseObj = method.phases[phaseCounters[selectedMethod]];
+                
+                const phaseDuration = currentPhaseObj.duration;
+                const phaseTime = totalSeconds % method.cycleLength;
+                
+                // Calculate when to switch phases
+                let accumulated = 0;
+                let nextPhaseIndex = 0;
+                for (let i = 0; i < method.phases.length; i++) {
+                    accumulated += method.phases[i].duration;
+                    if (phaseTime < accumulated) {
+                        nextPhaseIndex = i;
+                        break;
+                    }
+                }
+                
+                // If phase changed
+                if (phaseCounters[selectedMethod] !== nextPhaseIndex) {
+                    phaseCounters[selectedMethod] = nextPhaseIndex;
+                    runBreathingPhase();
+                }
+                
+                // Check if a complete cycle is finished
+                if (totalSeconds % method.cycleLength === 0) {
+                    currentCycle++;
+                }
+            }, 1000);
+        }
+
+        function stopExercise() {
+            if (!isRunning) return;
+            
+            clearInterval(exerciseInterval);
+            isRunning = false;
+            startBtn.disabled = false;
+            startBtn.classList.remove('opacity-50');
+            
+            // Reset UI
+            breathingCircle.className = 'w-48 h-48 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center shadow-lg transition-transform';
+            instruction.textContent = 'Prêt';
+        }
+
+        function resetExercise() {
+            stopExercise();
+            totalSeconds = 0;
+            updateTimer();
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function runBreathingPhase() {
+            const method = breathingMethods[selectedMethod];
+            const currentPhaseObj = method.phases[phaseCounters[selectedMethod]];
+            
+            // Update instruction
+            instruction.textContent = currentPhaseObj.instruction;
+            
+            // Set duration CSS variable
+            breathingCircle.style.setProperty('--duration', `${currentPhaseObj.duration}s`);
+            
+            // Apply animation based on phase
+            breathingCircle.className = 'w-48 h-48 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center shadow-lg transition-transform';
+            
+            // Add animation class with delay to allow class change to take effect
+            setTimeout(() => {
+                breathingCircle.classList.add(`breath-${currentPhaseObj.name}`);
+            }, 10);
+        }
+    </script>
 </body>
 </html>
